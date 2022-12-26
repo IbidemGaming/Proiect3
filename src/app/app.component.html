@@ -15,20 +15,21 @@
 <h1 class="title-header">Season {{year}}</h1>
 
 <div class="content-body">
-  <p-accordion (onOpen)="getSelectedCircuit($event)">
+  <p-accordion (onOpen)="getSelectedCircuit($event)" [multiple]="true">
       <p-accordionTab *ngFor="let race of raceTable" header="{{race.raceName}}">
-        The {{race.raceName}} was the {{race.round}} race from {{race.season}} season and started at {{race.time}} on {{race.date}}.
-        The race took place in the beautiful country {{race.Circuit.Location.country}} at locality {{race.Circuit.Location.locality}}
-        on the <a href="{{race.Circuit.url}}" target="_blank">{{race.Circuit.circuitName}}</a>. The race had three practice sessions,
-        the first one started at {{race.FirstPractice? race.FirstPractice.time : 'unknown'}}, {{race.FirstPractice? race.FirstPractice.date : 'unknown'}},
-        second one at
-        {{race.SecondPractice? race.SecondPractice.time : 'unknown'}},
-        {{race.SecondPractice? race.SecondPractice.date : 'unknown'}}, and the third at {{race.ThirdPractice? race.ThirdPractice.time : 'unknown'}},
-        {{race.ThirdPractice? race.ThirdPractice.date : 'unknown'}}. The qualifying started at
-        {{race.Qualifying? race.Qualifying.time : 'unknown'}} on {{race.Qualifying? race.Qualifying.date : 'unknown'}}.
-
+        <p>
+          The {{race.raceName}} was the {{race.round}} race from {{race.season}} season and started at {{race.time}} on {{race.date}}.
+          The race took place in the beautiful country {{race.Circuit.Location.country}} at locality {{race.Circuit.Location.locality}}
+          on the <strong><a href="{{race.Circuit.url}}" target="_blank">{{race.Circuit.circuitName}}</a></strong>. The race had three practice sessions,
+          the first one started at {{race.FirstPractice? race.FirstPractice.time : 'unknown'}},
+          {{race.FirstPractice? race.FirstPractice.date : 'unknown'}}, second one at
+          {{race.SecondPractice? race.SecondPractice.time : 'unknown'}},
+          {{race.SecondPractice? race.SecondPractice.date : 'unknown'}}, and the third at
+          {{race.ThirdPractice? race.ThirdPractice.time : 'unknown'}},
+          {{race.ThirdPractice? race.ThirdPractice.date : 'unknown'}}. The qualifying started at
+          {{race.Qualifying? race.Qualifying.time : 'unknown'}} on {{race.Qualifying? race.Qualifying.date : 'unknown'}}.
+        </p>
       </p-accordionTab>
   </p-accordion>
-
 </div>
 
