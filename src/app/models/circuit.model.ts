@@ -1,7 +1,7 @@
 import { ILocationModel } from "./location.model";
 export interface ICircuitModel {
-  location: ILocationModel,
-  id: string,
-  name: string,
+  Location: ILocationModel,
+  circuitId: string,
+  circuitName: string,
   url: string,
 }

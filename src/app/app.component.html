@@ -3,47 +3,32 @@
 </div>
 
 <div class="menu">
-  <div class="arrow-base">
-    <i class="pi pi-angle-double-left menu-item" style=""></i>
-  </div>
-  <div class="year-menu">
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2020)">2010</button>
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2021)">2011</button>
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2022)">2012</button>
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2022)">2013</button>
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2022)">2014</button>
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2022)">2015</button>
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2022)">2016</button>
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2022)">2017</button>
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2022)">2018</button>
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2022)">2019</button>
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2022)">2020</button>
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2022)">2021</button>
-    <button pButton type="button" class="menu-item" (click)="selectedSeason(2022)">2022</button>
-  </div>
+  <button pButton
+          type="button"
+          class="menu-item"
+          *ngFor="let seasonYear of seasons"
+          (click)="getSelectedSeason(seasonYear.id)">
+    {{seasonYear.id}}
+  </button>
+</div>
 
-  <div class="arrow-base">
-    <i class="pi pi-angle-double-right menu-item" style="font-size: 2rem; width: 20px; height: 20px"></i>
-  </div>
+<h1 class="title-header">Season {{year}}</h1>
+
+<div class="content-body">
+  <p-accordion (onOpen)="getSelectedCircuit($event)">
+      <p-accordionTab *ngFor="let race of raceTable" header="{{race.raceName}}">
+        The {{race.raceName}} was the {{race.round}} race from {{race.season}} season and started at {{race.time}} on {{race.date}}.
+        The race took place in the beautiful country {{race.Circuit.Location.country}} at locality {{race.Circuit.Location.locality}}
+        on the <a href="{{race.Circuit.url}}" target="_blank">{{race.Circuit.circuitName}}</a>. The race had three practice sessions,
+        the first one started at {{race.FirstPractice? race.FirstPractice.time : 'unknown'}}, {{race.FirstPractice? race.FirstPractice.date : 'unknown'}},
+        second one at
+        {{race.SecondPractice? race.SecondPractice.time : 'unknown'}},
+        {{race.SecondPractice? race.SecondPractice.date : 'unknown'}}, and the third at {{race.ThirdPractice? race.ThirdPractice.time : 'unknown'}},
+        {{race.ThirdPractice? race.ThirdPractice.date : 'unknown'}}. The qualifying started at
+        {{race.Qualifying? race.Qualifying.time : 'unknown'}} on {{race.Qualifying? race.Qualifying.date : 'unknown'}}.
+
+      </p-accordionTab>
+  </p-accordion>
 
 </div>
 
-
-<p-table [value]="tableEntries">
-  <ng-template pTemplate="header">
-    <tr>
-      <th>Sea</th>
-      <th pSortableColumn="round">Rou<p-sortIcon field="round"></p-sortIcon></th>
-      <th pSortableColumn="raceName">Race<p-sortIcon field="raceName"></p-sortIcon></th>
-      <th pSortableColumn="Circuit.circuitName">Circuit<p-sortIcon field="Circuit.circuitName"></p-sortIcon></th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-race>
-    <tr>
-      <td>{{race.season}}</td>
-      <td>{{race.round}}</td>
-      <td>{{race.raceName}}</td>
-      <td>{{race.Circuit.circuitName}}</td>
-    </tr>
-  </ng-template>
-</p-table>

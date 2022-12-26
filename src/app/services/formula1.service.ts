@@ -17,8 +17,30 @@ export class  Formula1Service {
     return this.http.get<MRData>('https://ergast.com/api/f1.json');
   }
 
-  getSeason(year: number) {
+  getSeason(year: string) {
     return this.http.get<MRData>(`https://ergast.com/api/f1/${year}.json`);
+  }
+
+  getCircuit(circuitName: string) {
+    return this.http.get<any>(`http://ergast.com/api/f1/circuits/${circuitName}`)
+  }
+
+  getConstructorInfo(constructorName: string) {
+    return this.http.get<any>(`http://ergast.com/api/f1/constructors/${constructorName}`)
+  }
+
+  getDriverInfo(driverName: string) {
+    return this.http.get<any>(`http://ergast.com/api/f1/drivers/${driverName}`)
+  }
+
+  getGridInfo(gridName: string) {
+    return this.http.get<any>(`http://ergast.com/api/f1/grid/${gridName}`)
+  }
+
+  getLapTime(season: string, round: string, lap?: string){
+    if (lap)
+      return this.http.get<any>(`https://ergast.com/api/f1/${season}/${round}/laps/${lap}`);
+    return this.http.get<any>(`https://ergast.com/api/f1/${season}/${round}/laps`);
   }
 
 }
