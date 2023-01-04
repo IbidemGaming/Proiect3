@@ -1,11 +1,9 @@
 # Formula 1 Season Search Web Application
-<hr>
 
 This Formula 1 season search web application is a tool that allows users to search throw every season of Formula 1. Users can also see information
 about every race from selected season. The application uses TypeScript as the programming language which is more complex JavaScript language and
 Angular framework for the Front End of the application. I chose to use the API from Ergast Developer API because the proposed API from Rapid API,
 although he could fulfill a varied range of requirements, the number of requests was limited at 100 per day which is very restrain for a web application.
-<hr>
 
 ## Used Programming Language, Frameworks, Libraries and API
 
