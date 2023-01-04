@@ -46,7 +46,7 @@ saved with a .scss file extension, and they can be compiled into regular CSS fil
 
 
 ## Technical aspects
-### API session management
+### API
 All API queries require a GET request using a URL of the form: `http[s]://ergast.com/api/<series>/<season>/<round>/...` where:
 - **`<series>`**: should be set to `f1`
 - **`<season>`**: is a 4 digit integer
@@ -139,22 +139,22 @@ export interface SeasonModel {
 1. First, make sure you have the Node.js install on your machine. If you don't, you can download it from the [Node.js website](https://nodejs.org/en/), 
 be sure you have at least a grated version then v16.
 2. To install the Angular CLI, open a terminal window and run the following command: 
-```shell 
-npm install -g @angular/cli
-```
+  ```shell 
+  npm install -g @angular/cli
+  ```
 3. Clone the Django project from GitHub/GitLab to your local machine by running one of the following commands in your terminal:
-```shell
-git clone git@github.com:IbidemGaming/Proiect3
-```
-```shell
-git clone git@gitlab.com:IbidemGaming/Proiect3
-```
+  ```shell
+  git clone git@github.com:IbidemGaming/Proiect3
+  ```
+  ```shell
+  git clone git@gitlab.com:IbidemGaming/Proiect3
+  ```
 4. Navigate to the project directory in your terminal and run the following command to install the necessary dependencies:
-```shell
-npm install
-```
+  ```shell
+  npm install
+  ```
 5. Run the Angular development server by typing the following command in the terminal:
-```shell
-ng serve
-```
+  ```shell
+  ng serve
+  ```
 Navigate to `http://localhost:4200/` to use the application. The application will automatically reload if you change any of the source files.
