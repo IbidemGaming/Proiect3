@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Formula1Service } from "./services/formula1.service";
-import { IMRDataModel } from "./models/mrdata.model";
 import { IRace } from "./models/race.model";
 import * as moment from "moment";
-import {toNumbers} from "@angular/compiler-cli/src/version_helpers";
 import {SeasonModel} from "./models/season.model";
-import * as events from "events";
 
 @Component({
   selector: 'app-root',
@@ -53,10 +50,7 @@ export class AppComponent implements OnInit {
   }
 
   getSelectedCircuit(event: {index: number}) {
-    // console.log(event.index)
-    // this.formula1Service.getCircuit(this.raceTable[event.index].Circuit.circuitId).subscribe(response => {
-    //   console.log(response)
-    // })
+
   }
 
 
