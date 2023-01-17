@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
   }
 
   getSeasonList() {
-    let currentYear = parseInt(moment().format('YYYY'));
+    let currentYear = parseInt(moment().format('YYYY')) - 1;
     while (currentYear >= 1950) {
       let seasonYear: SeasonModel = {
         id: `${currentYear}`,

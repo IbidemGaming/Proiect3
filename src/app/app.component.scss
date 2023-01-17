@@ -48,6 +48,8 @@
 .content-body {
   position: relative;
   top: 60px;
+  width: 60%;
+  left: 20%;
 }
 
 a:-webkit-any-link {
@@ -80,6 +82,13 @@ a:-webkit-any-link {
 
   p {
     font-size: 1.25rem;
+  }
+
+  .content-body {
+    position: relative;
+    top: 60px;
+    width: 80%;
+    left: 10%;
   }
 
   ::ng-deep {
@@ -115,7 +124,10 @@ a:-webkit-any-link {
   }
 
   .content-body {
+    position: relative;
     top: 20px;
+    width: 90%;
+    left: 5%;
   }
 
   p {
